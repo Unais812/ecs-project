@@ -5,11 +5,6 @@ variable "ecs_cluster_name" {
   
 }
 
-variable "family_name" {
-    description = "family name for task definition"
-    type = string
-    default = "ecs_task"
-}
 
 variable "task_definiton_cpu" {
     description = "cpu required for the task definition"
