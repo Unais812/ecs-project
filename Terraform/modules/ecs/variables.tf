@@ -54,3 +54,8 @@ variable "subnet_id2" {
     description = "id of the second subnet"
     type = string
 }
+
+variable "target_group_arn" {
+    description = "arn of the target group to reference for the load balancer in ecs service"
+    type = string
+}

@@ -73,7 +73,7 @@ resource "aws_ecs_service" "ecs_service" {
 
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.foo.arn
+    target_group_arn = var.target_group_arn
     container_name   = "ecs-project"
     container_port   = var.port
   }
