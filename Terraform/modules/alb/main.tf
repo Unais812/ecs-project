@@ -5,8 +5,6 @@ resource "aws_lb" "ecs_alb" {
   security_groups    = [aws_security_group.ecs_sg_alb.id]
   subnets            = [var.subnet_id1, var.subnet_id2]
 
-  enable_deletion_protection = true
-
   tags = {
     Name = "ecs_alb"
   }
@@ -54,6 +52,12 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http" {
   from_port         = 80
   ip_protocol       = "tcp"
   to_port           = 80
+}
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
+  security_group_id = aws_security_group.ecs_sg_alb.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
 
