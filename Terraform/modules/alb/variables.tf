@@ -65,5 +65,19 @@ variable "health_timeout" {
   default = 6
 }
 
+variable "allow_all_traffic_cidr" {
+  description = "allow all inbound traffic"
+  type = string
+  default = "0.0.0.0/0"
+}
 
+variable "ssl_policy" {
+  description = "ssl policy"
+  type = string
+  default = "ELBSecurityPolicy-2016-08"
+}
 
+variable "cert_arn" {
+  description = "arn of the certficate"
+  type = string
+}
