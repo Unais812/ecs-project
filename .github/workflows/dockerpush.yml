@@ -13,10 +13,8 @@ jobs:
     runs-on: ubuntu-latest  
     steps: 
         - name: Checkout
-          uses: actions/checkout@v3
-          with:
-            context: .
-            file: ./app/Dockerfile
+          uses: actions/checkout@v4
+
           
           
             
@@ -32,13 +30,18 @@ jobs:
         - name: Login to Amazon ECR
           id: login-pf-aws-ecr
           uses: aws-actions/amazon-ecr-login@v1
+          with:
+            mask-password: true
           
 
         - name: Build and push the tagged docker image to Amazon ECR
+          id: build-image
+          
           env:
             ECR_REGISTRY: ${{ steps.login-pf-aws-ecr.outputs.registry }}
             ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO}}
             IMAGE_TAG: latest
           run: |
+            cd app
             docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
             docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
