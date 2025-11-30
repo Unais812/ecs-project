@@ -1,6 +1,11 @@
 name: Docker push 
 
-on: [push]
+on:
+  workflow_dispatch: 
+    inputs:
+        docker-push:
+            description: 'Do you want to push? Type "yes" to proceed'
+            type: string
 
 env:
   AWS_REGION: ${{secrets.AWS_REGION}}
