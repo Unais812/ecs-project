@@ -29,7 +29,6 @@ resource "aws_lb_target_group" "alb_target_group" {
 }
 
 
-# Configure the redirect action from HTTP to HTTPS omce route 53 is set up with ssl cert
 resource "aws_lb_listener" "redirct-HTTPS" {
   load_balancer_arn = aws_lb.ecs_alb.arn
   port              = 80
