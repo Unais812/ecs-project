@@ -1,4 +1,4 @@
-# Threat-Composer app deployed on ECS Fargate
+# Threat-Composer app 
 
 ## Overview
 - Deployed on ECS Fargate
