@@ -35,8 +35,7 @@
 
 
 # Docker
-- Multistage build to ensure a lightweight image for faster deployment
-- Cut unecessary source code in runtime stage for small image size
+- Multistage build to ensure a lightweight image resulting in a 90% smaller image size
 - Ensures smooth deployment across all environments to prevent "it works on my machine" problems
 
 
