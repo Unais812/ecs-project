@@ -1,4 +1,4 @@
-name: checkout Terraform code 
+name: Terraform apply 
 
 on:
   workflow_dispatch: 
@@ -10,7 +10,7 @@ on:
   
 jobs:
   terraform-check:
-    name: Terraform check
+    name: Terraform apply
     runs-on: ubuntu-latest
 
     defaults:
@@ -34,6 +34,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.5
-
+      - name: Terraform init
+        run: terraform init
       - name: Terraform apply
         run: terraform apply
