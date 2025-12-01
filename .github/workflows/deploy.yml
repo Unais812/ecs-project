@@ -7,8 +7,8 @@ on:
 
   
 jobs:
-  terraform-apply:
-    name: Terraform apply
+  terraform-check:
+    name: Terraform check
     runs-on: ubuntu-latest
 
     defaults:
@@ -31,7 +31,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 6.23.0
+          terraform_version: 1.8.5
 
       - name: Terraform fmt
         run: terraform fmt
