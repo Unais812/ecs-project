@@ -32,5 +32,7 @@ COPY --from=builder /app/public /app/public
 # Installs package globally on system and 'serve' is the executable that starts the web server
 RUN yarn global add serve
 
+EXPOSE 3000
+
 # serve is the executable yarn uses to serve the application 
 CMD [ "serve", "-s", "build" ]
