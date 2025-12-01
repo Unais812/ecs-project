@@ -14,8 +14,7 @@
 
 ## Features
 - Uses an ALB to distribute load evenly
-- HTTP-HTTPS redirection using an ALB listener
-- Security groups to restrict complete access to other resources
+- HTTP -> HTTPS redirection using an ALB listener
 - Uses route53 hosted zone + ACM allowing app to be reached on **https://tm.nginxunais.com**
 
 # Directory Structure
