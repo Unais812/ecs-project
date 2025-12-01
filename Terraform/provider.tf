@@ -10,7 +10,6 @@ terraform {
     bucket       = "ecs-project-s3"
     key          = "terraform.tfstate"
     region       = "eu-north-1"
-    use_lockfile = true #s3 native locking 
   }
 }
 
