@@ -15,10 +15,7 @@ resource "aws_ecs_task_definition" "ecs_task" {
   cpu                      = var.task_definiton_cpu
   memory                   = var.task_definition_memory
   execution_role_arn = aws_iam_role.ecs_iam_role.arn
-  runtime_platform {
-    operating_system_family = "LINUX"
-    cpu_architecture        = "ARM64"
-  }
+ 
   container_definitions = jsonencode([
     {
       name      = var.image_name
@@ -94,6 +91,7 @@ resource "aws_ecs_service" "ecs_service" {
   network_configuration {
     security_groups = [var.ecs_sg]
     subnets = [var.subnet_id1, var.subnet_id2]
+    assign_public_ip = true
   }
 
 
