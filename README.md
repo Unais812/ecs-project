@@ -33,7 +33,6 @@
     ├── provider.tf
     ├── variables.tf
     └── modules/
-        ├── acm/
         ├── alb/
         ├── ecs/
         ├── route53/
