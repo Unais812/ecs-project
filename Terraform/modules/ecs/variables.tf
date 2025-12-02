@@ -64,11 +64,6 @@ variable "ecs_task_iam" {
   default = "ecs_task_iam"
 }
 
-# variable "ecs_sg" {
-#     description = "security group for the alb"
-#     type = string
-# }
-
 variable "load_balancer_arn" {
   description = "arn for the alb to configure the listener"
   type = string

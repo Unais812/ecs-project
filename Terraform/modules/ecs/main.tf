@@ -47,8 +47,6 @@ resource "aws_ecs_task_definition" "ecs_task" {
 resource "aws_iam_role" "ecs_iam_role" {
   name = "ecs_task_iam"
 
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression result to valid JSON syntax.
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [

@@ -10,10 +10,6 @@ output "target_group_arn" {
   value = aws_lb_target_group.alb_target_group.arn
 }
 
-# output "ecs_sg" {
-#   value = aws_security_group.ecs_sg.id
-# }
-
 output "load_balancer_arn" {
   value = aws_lb.ecs_alb.arn
 }
