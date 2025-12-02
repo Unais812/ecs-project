@@ -1,7 +1,7 @@
 # Create VPC
 resource "aws_vpc" "ecs_vpc" {
-  cidr_block = var.dog
-  region = var.cat
+  cidr_block = var.vpc_cidr
+  region = var.region
   tags = {
     Name = "ecs_vpc"
   }

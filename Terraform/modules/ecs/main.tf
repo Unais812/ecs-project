@@ -89,7 +89,7 @@ resource "aws_ecs_service" "ecs_service" {
 
 
   network_configuration {
-    security_groups = [var.ecs_sg]
+    security_groups = [aws_security_group.ecs_sg.id]
     subnets = [var.subnet_id1, var.subnet_id2]
     assign_public_ip = true
   }
@@ -104,4 +104,27 @@ resource "aws_ecs_service" "ecs_service" {
 }
 
 
+resource "aws_security_group" "ecs_sg" {
+  name        = "ecs-sg"
+  description = "Allow traffic from container port"
+  vpc_id      = var.vpc_id
 
+  tags = {
+    Name = "ecs-sg"
+  }
+}
+
+
+resource "aws_vpc_security_group_ingress_rule" "ecs-sg-ingress" {
+  security_group_id = aws_security_group.ecs_sg.id
+  referenced_security_group_id = var.alb_sg
+  from_port         = var.app_port
+  ip_protocol       = "tcp"
+  to_port           = var.app_port
+}
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ecs" {
+  security_group_id = aws_security_group.ecs_sg.id
+  cidr_ipv4         = var.allow_all_traffic_cidr
+  ip_protocol       = "-1" # semantically equivalent to all ports
+}

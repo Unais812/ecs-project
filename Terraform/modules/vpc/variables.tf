@@ -1,13 +1,13 @@
-variable "dog" {
+variable "vpc_cidr" {
     description = "cidr for the vpc"
     type = string
-    # default = "10.0.0.0/24"
+    default = "10.0.0.0/24"
 }
 
-variable "cat" {
+variable "region" {
     description = "region"
     type = string
-    # default = "eu-north-1"
+    default = "eu-north-1"
 }
 
 variable "public_subnet_cidr_1" {

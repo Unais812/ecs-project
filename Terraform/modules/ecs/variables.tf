@@ -64,10 +64,10 @@ variable "ecs_task_iam" {
   default = "ecs_task_iam"
 }
 
-variable "ecs_sg" {
-    description = "security group for the alb"
-    type = string
-}
+# variable "ecs_sg" {
+#     description = "security group for the alb"
+#     type = string
+# }
 
 variable "load_balancer_arn" {
   description = "arn for the alb to configure the listener"
@@ -102,4 +102,26 @@ variable "arn_ecs_full_access" {
   description = "grants role full access for ecs service"
   type = string
   default = "arn:aws:iam::aws:policy/AmazonECS_FullAccess"
+}
+
+variable "app_port" {
+  description = "port which my app is hosted on"
+  type = number
+  default = 3000
+}
+
+variable "allow_all_traffic_cidr" {
+  description = "cidr to allow all traffic"
+  type = string
+  default = "0.0.0.0/0"
+}
+
+variable "vpc_id" {
+    description = "id for the vpc"
+    type = string
+}
+
+variable "alb_sg" {
+  description = "id of the alb sg"
+  type = string
 }

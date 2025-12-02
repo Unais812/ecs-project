@@ -20,3 +20,11 @@ output "cloudwatch_group_name" {
   description = ".name for clouwatch group"
   value = aws_cloudwatch_log_group.cw_log_group.name 
 }
+
+# output "ecs_sg_alb" {
+#   value = aws_security_group.ecs_sg_alb.id
+# }
+
+output "ecs_sg" {
+  value = aws_security_group.ecs_sg.id
+}

@@ -11,6 +11,7 @@ variable "subnet_id2" {
 variable "region" {
     description = "the region for the alb"
     type = string
+    default = "eu-north-1"
 }
 
 variable "vpc_id" {
@@ -21,6 +22,7 @@ variable "vpc_id" {
 variable "vpc_cidr" {
     description = "cidr for the vpc which is required for the security group"
     type = string
+    default = "10.0.0.0/24"
 }
 
 variable "app_port" {
