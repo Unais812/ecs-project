@@ -20,10 +20,6 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v4
 
-          
-          
-            
-          
         - name: Setup AWS ECR Details
           uses: aws-actions/configure-aws-credentials@v1
           with:
@@ -31,14 +27,12 @@ jobs:
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: ${{secrets.AWS_REGION}}
 
-
         - name: Login to Amazon ECR
           id: login-pf-aws-ecr
           uses: aws-actions/amazon-ecr-login@v1
           with:
             mask-password: true
           
-
         - name: Build and push the tagged docker image to Amazon ECR
           id: build-image
           
