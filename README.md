@@ -9,8 +9,7 @@
 
 
 # Architecture Diagram
-
-<img width="609" height="689" alt="Screenshot 2025-11-30 at 01 29 51" src="https://github.com/user-attachments/assets/13bd1530-992b-4f91-8830-5e74fedc19e1" />
+<img width="640" height="668" alt="ECS arch diagram 1" src="https://github.com/user-attachments/assets/09e75a91-6d1a-403f-97b2-6ae5921a6995" />
 
 ## Features
 - Uses an ALB to distribute load evenly
