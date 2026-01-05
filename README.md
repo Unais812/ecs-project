@@ -1,19 +1,19 @@
-# Threat-Composer app 
+# Prodcution grade ECS deployment
 
 ## Overview
-- Deployed on ECS Fargate
-- Uses HTTPS encryption 
-- Deployed in different AZs for high availability
-- Docker multistage for a lightweight app
-- CI/CD pipelines with GitHub actions to automate infra checks along with deploying the application
+This is a deployment of AWS threat composer tool on ECS using production grade scalable infrastructure, has many secure features such as non root user for Dockerfile, HTTPS traffic flow, IAM roles following principle of least privileged \
+Automated infrastructure provisioning with terraform and CI/CD pipelines for streamlined process
 
 
 # Architecture Diagram
 <img width="640" height="668" alt="ECS arch diagram 1" src="https://github.com/user-attachments/assets/09e75a91-6d1a-403f-97b2-6ae5921a6995" />
 
 ## Features
-- Uses an ALB to distribute load evenly
-- HTTP -> HTTPS redirection using an ALB listener
+- Deployed on ECS Fargate
+- Uses HTTPS encryption 
+- Deployed in different AZs for high availability
+- Docker multistage for a lightweight app
+- CI/CD pipelines with GitHub actions to automate infra checks along with deploying the application
 - Uses route53 hosted zone + ACM allowing app to be reached on **https://tm.nginxunais.com**
 
 # Directory Structure
